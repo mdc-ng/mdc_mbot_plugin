@@ -1,30 +1,21 @@
+import logging
+import os
+import requests
+import shutil
 from mbot.core.plugins import (
     plugin,
     PluginCommandContext,
     PluginCommandResponse,
-    PluginMeta,
 )
 from mbot.openapi import mbot_api
-import logging
-import os
-from typing import Dict, Any
+from .config import *
+
 
 server = mbot_api
 _LOGGER = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
 
 lib_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "libmdc_ng.so")
 lib_path_new = lib_path + ".new"
-
-
-@plugin.after_setup
-def after_setup(plugin_meta: PluginMeta, config: Dict[str, Any]):
-    if not os.path.isfile(lib_path):
-        update_lib()
-
-    from plugins.mdc_mbot_plugin import libmdc_ng
-
-    _LOGGER.info("MDC基础库加载成功, 当前版本: %s" % libmdc_ng.version())
 
 
 @plugin.command(
@@ -53,21 +44,14 @@ def update_lib():
     os.rename(lib_path_new, lib_path)
 
 
-config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.ini")
-
-
 def mdc_main(path: str, config: str = config_path):
     from plugins.mdc_mbot_plugin import libmdc_ng
 
     libmdc_ng.main(path, config)
 
 
-import requests
-import shutil
-
-
 def download_file(url, name):
-    with requests.get(url, stream=True) as r:
+    with requests.get(url, proxies=proxies, stream=True) as r:
         with open(name, "wb") as f:
             shutil.copyfileobj(r.raw, f)
 
