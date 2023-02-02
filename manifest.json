@@ -1,0 +1,9 @@
+{
+  "name": "mdc_mbot_plugin",
+  "title": "MDC插件",
+  "author": "aj",
+  "description": "MDC基础库",
+  "version": "0.2.0",
+  "requirements": [],
+  "configField": []
+}
