@@ -14,9 +14,13 @@ logging.basicConfig(level=logging.INFO)
 def after_setup(plugin_meta: PluginMeta, config: Dict[str, Any]):
     init_config(config)
 
-    if not os.path.isfile(lib_path):
-        update_lib()
+    try:
+        if not os.path.isfile(lib_path):
+            update_lib()
 
-    from plugins.mdc_mbot_plugin import libmdc_ng
+        from plugins.mdc_mbot_plugin import libmdc_ng
 
-    _LOGGER.info("MDC基础库加载成功, 当前版本: %s" % libmdc_ng.version())
+        _LOGGER.info("MDC基础库加载成功, 当前版本: %s" % libmdc_ng.version())
+    except Exception as e:
+        _LOGGER.error(e)
+        _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib, 成功后重启容器")
