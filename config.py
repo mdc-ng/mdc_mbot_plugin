@@ -16,11 +16,12 @@ proxies = {
 
 def init_config(web_config: dict):
     config.read(config_path)
-    config["common"]["target_folder"] = web_config.get("target_folder")
-    config["proxy"]["proxy"] = web_config.get("proxy")
+    config["common"]["target_folder"] = web_config.get("target_folder") or ""
 
-    proxies["http"] = web_config.get("proxy")
-    proxies["https"] = web_config.get("proxy")
+    proxy = web_config.get("proxy") or ""
+    config["proxy"]["proxy"] = proxy
+    proxies["http"] = proxy
+    proxies["https"] = proxy
 
     with open(config_path, "w") as cfg:
         config.write(cfg)
