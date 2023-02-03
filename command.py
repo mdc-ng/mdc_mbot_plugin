@@ -21,7 +21,7 @@ lib_path_new = lib_path + ".new"
 @plugin.command(
     name="update",
     title="更新MDC",
-    desc="拉取最新MDC lib",
+    desc="拉取最新MDC lib, 重启容器后生效",
     icon="AlarmOn",
     run_in_background=True,
 )
