@@ -1,0 +1,24 @@
+name: Release
+
+permissions: write-all
+
+on:
+  push:
+    branches: [ "main" ]
+    tags:
+    - "v*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Release-PR
+      uses: google-github-actions/release-please-action@v3
+      with:
+        release-type: simple
+        token: ${{ secrets.PAT_RELEASE }}
+        pull-request-title-pattern: "chore${scope}: release ${version}"
+        extra-files: manifest.json
