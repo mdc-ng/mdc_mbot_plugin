@@ -91,6 +91,7 @@ def collect_videos(path):
         ".iso",
         ".mpg",
         ".m4v",
+        ".ts",
     ]:
         return [path]
     else:
