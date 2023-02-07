@@ -13,6 +13,12 @@
       "defaultValue": ""
     },
     {
+      "fieldName": "watch_folder",
+      "fieldType": "String",
+      "label": "监控路径,逗号分隔",
+      "defaultValue": ""
+    },
+    {
       "fieldName": "target_folder",
       "fieldType": "String",
       "label": "刮削整理目标路径",

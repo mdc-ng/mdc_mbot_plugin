@@ -1,3 +1,4 @@
+import logging
 from mbot.core.plugins import (
     plugin,
     PluginMeta,
@@ -5,6 +6,7 @@ from mbot.core.plugins import (
 from typing import Dict, Any
 from .command import *
 from .config import *
+from .event import *
 
 _LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)

@@ -8,7 +8,7 @@ from mbot.core.plugins import (
     PluginCommandResponse,
 )
 from mbot.openapi import mbot_api
-from .config import *
+from . import config
 
 
 server = mbot_api
@@ -44,14 +44,14 @@ def update_lib():
     os.rename(lib_path_new, lib_path)
 
 
-def mdc_main(path: str, config: str = config_path):
+def mdc_main(path: str, config_ini: str = config.config_path):
     from plugins.mdc_mbot_plugin import libmdc_ng
 
-    libmdc_ng.main(path, config)
+    libmdc_ng.main(path, config_ini)
 
 
 def download_file(url, name):
-    with requests.get(url, proxies=proxies, stream=True) as r:
+    with requests.get(url, proxies=config.proxies, stream=True) as r:
         with open(name, "wb") as f:
             shutil.copyfileobj(r.raw, f)
 
