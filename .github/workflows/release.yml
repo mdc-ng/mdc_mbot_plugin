@@ -22,3 +22,9 @@ jobs:
         token: ${{ secrets.PAT_RELEASE }}
         pull-request-title-pattern: "chore${scope}: release ${version}"
         extra-files: manifest.json
+
+    - name: Release-latest
+      uses: softprops/action-gh-release@v1
+      if: "!startsWith(github.ref, 'refs/tags/')"
+      with:
+        tag_name: latest
