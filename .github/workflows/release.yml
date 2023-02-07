@@ -21,4 +21,7 @@ jobs:
         release-type: simple
         token: ${{ secrets.PAT_RELEASE }}
         pull-request-title-pattern: "chore${scope}: release ${version}"
-        extra-files: manifest.json
+        extra-files: 
+        - path: manifest.json
+          type: json
+          jsonpath: $.version
