@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.0.0...v1.0.1) (2023-02-07)
+
+
+### Bug Fixes
+
+* 测试CI自动更新版本号 ([9af0016](https://github.com/mdc-ng/mdc_mbot_plugin/commit/9af0016094aad1b98239c9a6acf40e77fc99b9db))
+
 ## 1.0.0 (2023-02-07)
 
 
