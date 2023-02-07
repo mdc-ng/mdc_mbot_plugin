@@ -3,7 +3,9 @@
   "title": "MDC插件",
   "author": "aj",
   "description": "MDC基础库",
-  "version": "0.2.0",
+  "_comment_start": "x-release-please-start-version",
+  "version": "1.0.0",
+  "_comment_end": "x-release-please-end",
   "requirements": [],
   "configField": [
     {
