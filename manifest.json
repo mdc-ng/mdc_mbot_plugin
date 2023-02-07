@@ -17,6 +17,24 @@
       "fieldType": "String",
       "label": "刮削整理目标路径",
       "defaultValue": ""
+    },
+    {
+      "fieldName": "watermark",
+      "fieldType": "Bool",
+      "label": "图片添加水印(无码/字幕/破解/流出)",
+      "defaultValue": false
+    },
+    {
+      "fieldName": "watermark_start",
+      "fieldType": "String",
+      "label": "水印起始位置: 0左上, 1左下, 2右下, 3右上",
+      "defaultValue": "0"
+    },
+    {
+      "fieldName": "watermark_clockwise",
+      "fieldType": "String",
+      "label": "水印添加方向: 0逆时针, 1顺时针",
+      "defaultValue": "0"
     }
   ]
 }
