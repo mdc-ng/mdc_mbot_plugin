@@ -7,6 +7,9 @@
   "version": "1.1.0",
   "_comment_end": "x-release-please-end",
   "requirements": [],
+  "dependencies": {
+    "appVersion": ">=1.9.25",
+  },
   "configField": [
     {
       "fieldName": "proxy",
