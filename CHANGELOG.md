@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.0.1...v1.1.0) (2023-02-08)
+
+
+### Features
+
+* 更新mdc架构 ([4adfdf3](https://github.com/mdc-ng/mdc_mbot_plugin/commit/4adfdf3a86f91bd50b552a4d8550a7240d4e2f86))
+
 ## [1.0.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.0.0...v1.0.1) (2023-02-07)
 
 
