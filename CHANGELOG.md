@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.1.0...v1.1.1) (2023-02-08)
+
+
+### Bug Fixes
+
+* 添加MR版本依赖 ([c00dcd8](https://github.com/mdc-ng/mdc_mbot_plugin/commit/c00dcd8146216d8e250aeb67cdaeb187eb9c42ee))
+
 ## [1.1.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.0.1...v1.1.0) (2023-02-08)
 
 
