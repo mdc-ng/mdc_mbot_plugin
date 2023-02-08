@@ -4,7 +4,7 @@
   "author": "aj",
   "description": "MDC基础库",
   "_comment_start": "x-release-please-start-version",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "_comment_end": "x-release-please-end",
   "requirements": [],
   "configField": [
