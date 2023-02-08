@@ -1,8 +1,22 @@
 # mdc_mbot_plugin
-Yet another MovieBot plugin..
+Yet another MovieBot plugin
+
+## Features
+- 高性能刮削器
+- 监控下载目录，下载完成自动刮削入库
+- 支持图片添加标签水印
 
 ## Usage
-### 基本使用
+### 工作流程
+硬链后刮削，无需担心做种问题，全流程如下：
+1. 影片识别
+2. 元数据抓取
+3. 在整理目录下创建目标目录
+4. 下载、处理图片
+5. 硬链接视频以及自带的字幕文件到目标目录
+6. 生成nfo文件
+
+### 安装与使用
 1. 在 [Release](https://github.com/mdc-ng/mdc_mbot_plugin/releases) 页面下载最新版本插件压缩包 mdc_mbot_plugin-${version}.zip
 2. 解压缩并将插件文件夹重命名为 mdc_mbot_plugin，丢到容器的 plugins 目录
 3. 重启容器
