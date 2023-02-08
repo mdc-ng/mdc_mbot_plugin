@@ -8,7 +8,7 @@
   "_comment_end": "x-release-please-end",
   "requirements": [],
   "dependencies": {
-    "appVersion": ">=1.9.25",
+    "appVersion": ">=1.9.25"
   },
   "configField": [
     {
