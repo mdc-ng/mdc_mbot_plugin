@@ -6,7 +6,7 @@ from mbot.core.plugins import PluginContext
 from typing import Dict
 
 from . import config
-from .command import mdc_main
+from .command import mdc_dir
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -54,45 +54,4 @@ def on_event(ctx: PluginContext, event_type: str, data: Dict):
 
     _LOGGER.info("[MDC事件] 下载地址与监控目录匹配: %s, 开始执行刮削" % save_path)
 
-    videos = collect_videos(save_path)
-    if len(videos) > 0:
-        _LOGGER.info("[MDC事件] 视频文件检测到: %s" % videos)
-
-        if len(videos) > 10:
-            _LOGGER.info("[MDC事件] 视频文件数量多于10个，不处理")
-
-        for video in videos:
-            _LOGGER.info("[MDC事件] 开始处理视频文件: %s" % video)
-            try:
-                mdc_main(video)
-            except Exception as e:
-                _LOGGER.error("[MDC事件] 处理视频文件出错: %s" % video)
-                _LOGGER.error(e)
-                continue
-            _LOGGER.info("[MDC事件] 处理视频文件完成: %s" % video)
-
-
-def collect_videos(path):
-    if not path:
-        return []
-    videos = []
-    if os.path.isdir(path):
-        for file in os.listdir(path):
-            videos.extend(collect_videos(os.path.join(path, file)))
-        return videos
-    elif os.path.splitext(path)[1].lower() in [
-        ".mp4",
-        ".avi",
-        ".rmvb",
-        ".wmv",
-        ".mov",
-        ".mkv",
-        ".webm",
-        ".iso",
-        ".mpg",
-        ".m4v",
-        ".ts",
-    ]:
-        return [path]
-    else:
-        return []
+    mdc_dir(save_path)

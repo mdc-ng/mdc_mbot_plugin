@@ -4,6 +4,7 @@ import pathlib
 import os
 import requests
 import shutil
+from mbot.core.params import ArgSchema, ArgType
 from mbot.core.plugins import (
     plugin,
     PluginCommandContext,
@@ -32,6 +33,22 @@ def update(ctx: PluginCommandContext):
 
     _LOGGER.info("MDC更新成功")
     return PluginCommandResponse(True, "更新成功")
+
+
+@plugin.command(
+    name="mdc_manual",
+    title="MDC手动执行",
+    desc="指定目录或视频文件进行刮削",
+    icon="",
+    run_in_background=True,
+)
+def mdc_test(ctx: PluginCommandContext, path: ArgSchema(ArgType.String, "刮削路径", "")):
+    try:
+        mdc_dir(path)
+    except Exception as e:
+        _LOGGER.error(e, exc_info=True)
+        return PluginCommandResponse(False, f"一键刮削成功")
+    return PluginCommandResponse(True, f"一键刮削失败")
 
 
 def update_bin():
@@ -77,6 +94,51 @@ def mdc_main(path: str, config_ini: str = config.config_path):
         cwd=pathlib.Path(__file__).parent.absolute(),
         env={"RUST_LOG": "mdc_ng=info"},
     )
+
+
+def mdc_dir(path: str):
+    videos = collect_videos(path)
+    if len(videos) > 0:
+        _LOGGER.info("[MDC] 视频文件检测到: %s" % videos)
+
+        if len(videos) > 10:
+            _LOGGER.info("[MDC] 视频文件数量多于10个，不处理")
+
+        for video in videos:
+            _LOGGER.info("[MDC] 开始处理视频文件: %s" % video)
+            try:
+                mdc_main(video)
+            except Exception as e:
+                _LOGGER.error("[MDC] 处理视频文件出错: %s" % video)
+                _LOGGER.error(e)
+                continue
+            _LOGGER.info("[MDC] 处理视频文件完成: %s" % video)
+
+
+def collect_videos(path: str):
+    if not path:
+        return []
+    videos = []
+    if os.path.isdir(path):
+        for file in os.listdir(path):
+            videos.extend(collect_videos(os.path.join(path, file)))
+        return videos
+    elif os.path.splitext(path)[1].lower() in [
+        ".mp4",
+        ".avi",
+        ".rmvb",
+        ".wmv",
+        ".mov",
+        ".mkv",
+        ".webm",
+        ".iso",
+        ".mpg",
+        ".m4v",
+        ".ts",
+    ]:
+        return [path]
+    else:
+        return []
 
 
 def download_file(url, name):
