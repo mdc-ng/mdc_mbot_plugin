@@ -17,9 +17,7 @@ def after_setup(plugin_meta: PluginMeta, config: Dict[str, Any]):
     init_config(config)
 
     try:
-        if not os.path.isfile(bin_path):
-            update_bin()
-        else:
+        if os.path.isfile(bin_path):
             run_command(
                 [
                     "./mdc_ng",
@@ -28,7 +26,8 @@ def after_setup(plugin_meta: PluginMeta, config: Dict[str, Any]):
                 True,
                 cwd=pathlib.Path(__file__).parent.absolute(),
             )
-        # _LOGGER.info("MDC基础库加载成功, 当前版本: %s" % libmdc_ng.version())
+        else:
+            _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib")
     except Exception as e:
         _LOGGER.error(e)
-        _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib, 成功后重启容器")
+        _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib")
