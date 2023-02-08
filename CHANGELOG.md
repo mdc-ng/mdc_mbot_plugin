@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.1.1...v1.2.0) (2023-02-08)
+
+
+### Features
+
+* 添加手动执行快捷指令 ([5073cb4](https://github.com/mdc-ng/mdc_mbot_plugin/commit/5073cb4dff2080246264a07da995670cef62974b))
+
+
+### Bug Fixes
+
+* typo ([2712002](https://github.com/mdc-ng/mdc_mbot_plugin/commit/2712002adb2f02d85ebd78a84dcd216296b51bff))
+* 优化初始化逻辑，不再自动拉取基础库 ([fc8071c](https://github.com/mdc-ng/mdc_mbot_plugin/commit/fc8071c4b3b4412a8a1efa1f8ac1e5cdcdcab1fc))
+
 ## [1.1.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.1.0...v1.1.1) (2023-02-08)
 
 
