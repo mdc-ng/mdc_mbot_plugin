@@ -44,3 +44,8 @@ def mdc_command(video, config_path):
     # config_path:  可选，自定义配置文件的绝对路径。不传递则会使用默认config.ini
     mdc_main(video, config_path)
 ```
+
+## 已知问题
+目前MR版本(v1.9.25)会对媒体文件夹中网页端搜索、订阅下载的视频进行原名硬链，使用此插件可能会导致目标目录中存在一份MR硬链目录、一份刮削结果硬链目录
+
+等后续主干更新可关闭自动硬链功能后即可解决
