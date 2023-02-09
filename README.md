@@ -1,8 +1,8 @@
 # mdc_mbot_plugin
 Yet another MovieBot plugin
 
-![GitHub manifest version](https://img.shields.io/github/manifest-json/v/mdc-ng/mdc_mbot_plugin?label=plugin)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?color=orange&label=mdc-ng)
+[![GitHub manifest version](https://img.shields.io/github/manifest-json/v/mdc-ng/mdc_mbot_plugin?label=plugin)](https://github.com/mdc-ng/mdc_mbot_plugin/releases)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?color=orange&label=mdc-ng)](https://github.com/mdc-ng/mdc-ng/releases)
 
 ## Features
 - 高性能刮削器
