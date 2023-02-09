@@ -1,6 +1,9 @@
 # mdc_mbot_plugin
 Yet another MovieBot plugin
 
+![GitHub manifest version](https://img.shields.io/github/manifest-json/v/mdc-ng/mdc_mbot_plugin?label=plugin)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?color=orange&label=mdc-ng)
+
 ## Features
 - 高性能刮削器
 - 监控下载目录，下载完成自动刮削入库
