@@ -5,9 +5,11 @@ Yet another MovieBot plugin
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?color=orange&label=mdc-ng)](https://github.com/mdc-ng/mdc-ng/releases)
 
 ## Features
-- 高性能刮削器
-- 监控下载目录，下载完成自动刮削入库
-- 支持图片添加标签水印
+- [x] 高性能刮削器
+- [x] 监控下载目录，下载完成自动刮削入库
+- [x] 支持图片添加标签水印
+- [ ] 存量整理
+- [ ] 可视化界面
 
 ## Usage
 ### 工作流程
@@ -49,4 +51,4 @@ def mdc_command(video, config_path):
 ```
 
 ## 已知问题
-1. 目前版本MR(v1.9.25)对于网页端搜索、订阅下载的视频，会将未识别的视频进行原名硬链。使用此插件会导致目标目录中同时存在一份MR硬链目录、一份刮削结果硬链目录。MR后续会支持关闭此自动硬链功能，此问题即可解决
+1. 在当前版本MR(v1.9.xx)进行 **网页端** 搜索或订阅下载的视频，目标目录中会同时存在MR原样硬链过去的文件和插件刮削结果硬链，下载器直接提交的不受影响。MR后续会支持关闭指定媒体目录的自动硬链，此问题即可随之解决
