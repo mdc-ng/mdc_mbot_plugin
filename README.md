@@ -10,6 +10,7 @@ Yet another MovieBot plugin
 - [x] 支持图片添加标签水印
 - [ ] 存量整理
 - [ ] 可视化界面
+- [ ] 演员图片
 
 ## Usage
 ### 工作流程
