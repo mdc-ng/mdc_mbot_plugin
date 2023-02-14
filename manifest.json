@@ -1,51 +1,54 @@
 {
-  "name": "mdc_mbot_plugin",
-  "title": "MDC插件",
-  "author": "aj",
-  "description": "MDC基础库",
-  "_comment_start": "x-release-please-start-version",
-  "version": "1.1.1",
-  "_comment_end": "x-release-please-end",
-  "requirements": [],
-  "dependencies": {
-    "appVersion": ">=1.9.25"
-  },
-  "configField": [
-    {
-      "fieldName": "proxy",
-      "fieldType": "String",
-      "label": "代理设置",
-      "defaultValue": ""
+    "name": "mdc_mbot_plugin",
+    "title": "MDC插件",
+    "author": "aj",
+    "description": "MDC基础库",
+    "_comment_start": "x-release-please-start-version",
+    "version": "1.1.1",
+    "_comment_end": "x-release-please-end",
+    "requirements": [],
+    "dependencies": {
+        "appVersion": ">=1.9.25"
     },
-    {
-      "fieldName": "watch_folder",
-      "fieldType": "String",
-      "label": "监控路径,逗号分隔",
-      "defaultValue": ""
-    },
-    {
-      "fieldName": "target_folder",
-      "fieldType": "String",
-      "label": "刮削整理目标路径",
-      "defaultValue": ""
-    },
-    {
-      "fieldName": "watermark",
-      "fieldType": "Bool",
-      "label": "图片添加水印(无码/字幕/破解/流出)",
-      "defaultValue": false
-    },
-    {
-      "fieldName": "watermark_start",
-      "fieldType": "String",
-      "label": "水印起始位置: 0左上, 1左下, 2右下, 3右上",
-      "defaultValue": "0"
-    },
-    {
-      "fieldName": "watermark_clockwise",
-      "fieldType": "String",
-      "label": "水印添加方向: 0逆时针, 1顺时针",
-      "defaultValue": "0"
-    }
-  ]
+    "logoUrl": "/plugins/mdc_mbot_plugin/logo.png",
+    "githubUrl": "https://github.com/mdc-ng/mdc_mbot_plugin",
+    "helpDocUrl": "https://github.com/mdc-ng/mdc_mbot_plugin",
+    "configField": [
+        {
+            "fieldName": "proxy",
+            "fieldType": "String",
+            "label": "代理设置",
+            "defaultValue": ""
+        },
+        {
+            "fieldName": "watch_folder",
+            "fieldType": "String",
+            "label": "监控路径,逗号分隔",
+            "defaultValue": ""
+        },
+        {
+            "fieldName": "target_folder",
+            "fieldType": "String",
+            "label": "刮削整理目标路径",
+            "defaultValue": ""
+        },
+        {
+            "fieldName": "watermark",
+            "fieldType": "Bool",
+            "label": "图片添加水印(无码/字幕/破解/流出)",
+            "defaultValue": false
+        },
+        {
+            "fieldName": "watermark_start",
+            "fieldType": "String",
+            "label": "水印起始位置: 0左上, 1左下, 2右下, 3右上",
+            "defaultValue": "0"
+        },
+        {
+            "fieldName": "watermark_clockwise",
+            "fieldType": "String",
+            "label": "水印添加方向: 0逆时针, 1顺时针",
+            "defaultValue": "0"
+        }
+    ]
 }
