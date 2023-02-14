@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.2.0...v1.3.0) (2023-02-14)
+
+
+### Features
+
+* 添加logo和项目链接 ([d2cefa1](https://github.com/mdc-ng/mdc_mbot_plugin/commit/d2cefa15f9f9c35af91993dd162af78fadc0dae9))
+
 ## [1.2.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.1.1...v1.2.0) (2023-02-08)
 
 
