@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.3.0...v1.4.0) (2023-03-02)
+
+
+### Features
+
+* 添加MDC服务端相关指令 ([08e66d2](https://github.com/mdc-ng/mdc_mbot_plugin/commit/08e66d2ead630fde175a261c78f94aae1a222182))
+
 ## [1.3.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.2.0...v1.3.0) (2023-02-14)
 
 
