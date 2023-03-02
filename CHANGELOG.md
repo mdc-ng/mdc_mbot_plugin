@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.4.0...v1.4.1) (2023-03-02)
+
+
+### Bug Fixes
+
+* 去除冗余插件配置 ([c5d5630](https://github.com/mdc-ng/mdc_mbot_plugin/commit/c5d56304e06e96052c2ce34c3581c96b5492be67))
+
 ## [1.4.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.3.0...v1.4.0) (2023-03-02)
 
 
