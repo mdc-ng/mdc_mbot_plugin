@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.4.1...v1.5.0) (2023-03-02)
+
+
+### Features
+
+* MR使用独立插件配置，与MDC server配置分离 ([c9b4ddc](https://github.com/mdc-ng/mdc_mbot_plugin/commit/c9b4ddc91dd69e05874de08f942796c2235fd8e3))
+
 ## [1.4.1](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.4.0...v1.4.1) (2023-03-02)
 
 
