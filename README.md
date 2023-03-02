@@ -51,5 +51,16 @@ def mdc_command(video, config_path):
     mdc_main(video, config_path)
 ```
 
+## Web UI
+v1.4.0版本后，插件整合了 MDC server，也就是 MDC-NG Web UI 套件，增强了存量整理、可视化刮削以及配置管理等功能。在插件管理页面进行服务端的下载更新和启动：
+![image](https://user-images.githubusercontent.com/124132602/222326377-67bd2d14-6519-4e7e-be05-1eeb69a92aea.png)
+### Usage
+1. MDC server 默认使用9208端口，需要先在MovieBot容器添加相应的端口映射
+2. 点击”更新MDC“，插件会同时更新MDC lib与server组件
+3. 更新完成后，点击”启动/停止服务端"进行服务启动
+4. 在浏览器访问 <容器IP>:9208 进入 Web 界面
+5. MDC server 支持容器化部署方式，最新动态请关注容器版本发布页：https://hub.docker.com/repository/docker/mdcng/mdc/general
+  
+
 ## 已知问题
 1. 在当前版本MR(v1.9.xx)进行 **网页端** 搜索或订阅下载的视频，目标目录中会同时存在MR原样硬链过去的文件和插件刮削结果硬链，下载器直接提交的不受影响。MR后续会支持关闭指定媒体目录的自动硬链，此问题即可随之解决
