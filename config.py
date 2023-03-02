@@ -40,13 +40,6 @@ def init_config(web_config: dict):
     proxies["http"] = proxy
     proxies["https"] = proxy
 
-    if not config.has_section("watermark"):
-        config.add_section("watermark")
-
-    config["watermark"]["enabled"] = str(web_config.get("watermark")) or "0"
-    config["watermark"]["start"] = str(web_config.get("watermark_start")) or "0"
-    config["watermark"]["clockwise"] = str(web_config.get("watermark_clockwise")) or "0"
-
     with open(config_path, "w") as cfg:
         config.write(cfg)
 
