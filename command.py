@@ -133,16 +133,27 @@ def update_server():
     )
 
 
-def mdc_main(path: str, config_ini: str = config.config_path):
+def mdc_main(
+    path: str,
+    config_ini=None,
+):
+
+    target_folder = config.target_folder
+    proxy = config.proxies["http"]
+
+    command = ["./mdc_ng", "-p", path]
+
+    if config_ini:
+        command.extend(["-c", config_ini])
+    if target_folder:
+        command.extend(["-t", target_folder])
+    if proxy:
+        command.extend(["--proxy", proxy])
+
+    _LOGGER.info(command)
+
     run_command(
-        [
-            "./mdc_ng",
-            "-p",
-            path,
-            "-c",
-            config_ini,
-            "-s",
-        ],
+        command,
         True,
         cwd=pathlib.Path(__file__).parent.absolute(),
         env={"RUST_LOG": "mdc_ng=info"},
