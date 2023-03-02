@@ -27,7 +27,7 @@ Yet another MovieBot plugin
 2. 解压缩并将插件文件夹重命名为 mdc_mbot_plugin，丢到容器的 plugins 目录
 3. 重启容器
 4. 进入 moviebot 的插件管理 - 我的插件页面，对 MDC 插件进行配置：
-![image](https://user-images.githubusercontent.com/124132602/217214050-941124b0-99f2-41da-8f06-e147f79f7974.png)
+<img width="779" alt="image" src="https://user-images.githubusercontent.com/124132602/222363357-bd038ebb-5f81-4f38-9d0a-424340e0addd.png">
 
     注意：如果配置了监控目录，需要在MR的应用设置 - 下载设置 - 媒体文件夹中添加该目录，只要保持“下载保存路径”一项与MDC监控目录中的配置一致即可，其余随意填写无影响
 
