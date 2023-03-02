@@ -60,7 +60,7 @@ v1.4.0版本后，插件整合了 MDC server，也就是 MDC-NG Web UI 套件，
 3. 更新完成后，点击”启动/停止服务端"进行服务启动
 4. 在浏览器访问 <容器IP>:9208 进入 Web 界面
 5. MDC server 支持容器化部署方式，最新动态请关注容器版本发布页：https://hub.docker.com/repository/docker/mdcng/mdc/general
-6。当前版本仍在开发阶段，可能存在不少bug，遇到问题请提issue
+6. 当前版本仍在开发阶段，可能存在不少bug，遇到问题请提issue
   
 
 ## 已知问题
