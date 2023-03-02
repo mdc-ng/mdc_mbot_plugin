@@ -20,19 +20,43 @@ _LOGGER = logging.getLogger(__name__)
 bin_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mdc_ng")
 bin_path_new = bin_path + ".new"
 
+backend_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "backend")
+backend_path_new = backend_path + ".new"
+
+mdc_server = None
+
 
 @plugin.command(
     name="update",
-    title="更新MDC lib",
-    desc="拉取最新MDC核心库",
+    title="更新MDC",
+    desc="拉取最新MDC核心库和后端服务",
     icon="AlarmOn",
     run_in_background=True,
 )
 def update(ctx: PluginCommandContext):
     update_bin()
+    update_server()
 
     _LOGGER.info("MDC更新成功")
     return PluginCommandResponse(True, "更新成功")
+
+
+@plugin.command(
+    name="start_mdc_server",
+    title="启动/停止MDC服务端",
+    desc="启动/停止MDC服务端",
+    icon="AlarmOn",
+    run_in_background=True,
+)
+def start_mdc_server(ctx: PluginCommandContext):
+    global mdc_server
+
+    if not mdc_server:
+        start_server()
+    else:
+        stop_server()
+
+    return PluginCommandResponse(True, "启动成功，请通过9208端口访问Web UI")
 
 
 @plugin.command(
@@ -73,6 +97,35 @@ def update_bin():
     run_command(
         [
             "./mdc_ng",
+            "-v",
+        ],
+        True,
+        cwd=pathlib.Path(__file__).parent.absolute(),
+    )
+
+
+def update_server():
+    download_file(
+        "https://github.com/mdc-ng/mdc-ng/releases/download/latest/backend",
+        backend_path_new,
+    )
+    try:
+        os.remove(backend_path)
+    except:
+        pass
+    os.rename(backend_path_new, backend_path)
+    run_command(
+        [
+            "chmod",
+            "+x",
+            "backend",
+        ],
+        False,
+        cwd=pathlib.Path(__file__).parent.absolute(),
+    )
+    run_command(
+        [
+            "./backend",
             "-v",
         ],
         True,
@@ -163,3 +216,23 @@ def run_command(command, capture, **kwargs):
             break
         if capture:
             _LOGGER.info(line.decode().strip())
+
+
+def start_server():
+    global mdc_server
+    if not mdc_server:
+        mdc_server = subprocess.Popen(
+            [
+                "./backend",
+                "-p",
+                "9208",
+            ],
+            cwd=pathlib.Path(__file__).parent.absolute(),
+        )
+
+
+def stop_server():
+    global mdc_server
+    if mdc_server:
+        mdc_server.terminate()
+    mdc_server = None
