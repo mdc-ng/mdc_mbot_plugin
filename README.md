@@ -30,8 +30,8 @@ Yet another MovieBot plugin
 <img width="779" alt="image" src="https://user-images.githubusercontent.com/124132602/222363357-bd038ebb-5f81-4f38-9d0a-424340e0addd.png">
 
     注意：如果配置了监控目录，需要在MR的应用设置 - 下载设置 - 媒体文件夹中添加该目录，只要保持“下载保存路径”一项与MDC监控目录中的配置一致即可，其余随意填写无影响
-
-    ![image](https://user-images.githubusercontent.com/124132602/217214907-69b8a329-b4b9-4af2-b301-b113d5f77779.png)
+    
+    <img src="https://user-images.githubusercontent.com/124132602/217214907-69b8a329-b4b9-4af2-b301-b113d5f77779.png" width="400" />
 
 5. 代理配好后，在插件管理 - 快捷功能中执行“更新MDC”，等待执行成功
 6. 若更新MDC失败，通常是与github网络连接性问题，请检查代理是否配置正确
@@ -52,8 +52,10 @@ def mdc_command(video, config_path):
 ```
 
 ## Web UI
-v1.4.0版本后，插件整合了 MDC server，也就是 MDC-NG Web UI 套件，增强了存量整理、可视化刮削以及配置管理等功能。在插件管理页面进行服务端的下载更新和启动：
-![image](https://user-images.githubusercontent.com/124132602/222326377-67bd2d14-6519-4e7e-be05-1eeb69a92aea.png)
+v1.4.0版本后，插件整合了 MDC-NG Web UI 套件，增强了存量整理、可视化刮削以及配置管理等功能。在插件管理页面进行服务端的下载更新和启动：
+
+<img src="https://user-images.githubusercontent.com/124132602/222326377-67bd2d14-6519-4e7e-be05-1eeb69a92aea.png" width="400" />
+
 ### Usage
 1. MDC server 默认使用9208端口，需要先在MovieBot容器添加相应的端口映射
 2. 点击”更新MDC“，插件会同时更新MDC lib与server组件
@@ -65,3 +67,8 @@ v1.4.0版本后，插件整合了 MDC server，也就是 MDC-NG Web UI 套件，
 
 ## 已知问题
 1. 在当前版本MR(v1.9.xx)进行 **网页端** 搜索或订阅下载的视频，目标目录中会同时存在MR原样硬链过去的文件和插件刮削结果硬链，下载器直接提交的不受影响。MR后续会支持关闭指定媒体目录的自动硬链，此问题即可随之解决
+
+## 支持一下
+你可以送我一杯咖啡，以表示对这个项目的支持😉
+
+<img src="https://user-images.githubusercontent.com/124132602/222636597-f8d48940-a528-41e8-9362-8d15f7517bf6.png" width="300" />
