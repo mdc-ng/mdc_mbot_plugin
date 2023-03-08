@@ -28,6 +28,10 @@ def after_setup(plugin_meta: PluginMeta, config: Dict[str, Any]):
             )
         else:
             _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib")
+
+        if os.path.isfile(backend_path):
+            start_server()
+
     except Exception as e:
         _LOGGER.error(e)
         _LOGGER.error("MDC基础库加载失败, 请尝试在插件管理页面配置代理、手动更新MDC lib")
