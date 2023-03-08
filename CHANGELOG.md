@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.5.0...v1.6.0) (2023-03-08)
+
+
+### Features
+
+* 后端服务随MR自动启动 ([d522051](https://github.com/mdc-ng/mdc_mbot_plugin/commit/d5220516994d14edb326b4c3192b45635d1a4888))
+
 ## [1.5.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.4.1...v1.5.0) (2023-03-02)
 
 
