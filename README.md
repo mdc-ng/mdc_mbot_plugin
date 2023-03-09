@@ -26,12 +26,14 @@ Yet another MovieBot plugin
 1. 在 [Release](https://github.com/mdc-ng/mdc_mbot_plugin/releases) 页面下载最新版本插件压缩包 mdc_mbot_plugin-${version}.zip
 2. 解压缩并将插件文件夹重命名为 mdc_mbot_plugin，丢到容器的 plugins 目录
 3. 重启容器
-4. 进入 moviebot 的插件管理 - 我的插件页面，对 MDC 插件进行配置：
-<img width="779" alt="image" src="https://user-images.githubusercontent.com/124132602/222363357-bd038ebb-5f81-4f38-9d0a-424340e0addd.png">
+4. 进入 moviebot 的插件管理 - 我的插件页面，对 MDC 插件进行配置
+5. 多个监控、刮削目录配置方法如下图。以图中的配置为例：
+    1. 监控 /misc/downloads 和 /tmp 两个下载目录
+    2. 下载到 /misc/downloads 的视频会刮削保存到/ misc/test
+    3. 下载到 /tmp 的视频会刮削到 /tmp/adult
+<img width="593" alt="image" src="https://user-images.githubusercontent.com/124132602/224089031-1900c61b-753b-4d40-88a9-f4001221d323.png">
 
-    注意：如果配置了监控目录，需要在MR的应用设置 - 下载设置 - 媒体文件夹中添加该目录，只要保持“下载保存路径”一项与MDC监控目录中的配置一致即可，其余随意填写无影响
-    
-    <img src="https://user-images.githubusercontent.com/124132602/217214907-69b8a329-b4b9-4af2-b301-b113d5f77779.png" width="400" />
+注意：如果配置了监控目录，需要在MR的应用设置 - 下载设置 - 媒体文件夹中添加该目录，只要保持“下载路径装载到容器的路径”一项与MDC监控目录中的配置一致即可，其余随意填写无影响
 
 5. 代理配好后，在插件管理 - 快捷功能中执行“更新MDC”，等待执行成功
 6. 若更新MDC失败，通常是与github网络连接性问题，请检查代理是否配置正确
