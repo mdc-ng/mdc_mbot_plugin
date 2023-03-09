@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.6.0...v1.7.0) (2023-03-09)
+
+
+### Features
+
+* 增加多目录监控刮削功能 ([85c8f6b](https://github.com/mdc-ng/mdc_mbot_plugin/commit/85c8f6b5a2cc8b8c396b85f82fcf6bde7ec6e0ed))
+
 ## [1.6.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.5.0...v1.6.0) (2023-03-08)
 
 
