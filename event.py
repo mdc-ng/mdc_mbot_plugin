@@ -44,14 +44,18 @@ def on_event(ctx: PluginContext, event_type: str, data: Dict):
 
     _LOGGER.info("[MDC事件] watch_folder: %s " % config.watch_folder)
     flag = False
+    target_folder = None
     # 检查是否匹配监控目录配置
-    for dir in config.watch_folder:
+    for folders in config.watch_folder:
+        dir = folders[0]
         if save_path.startswith(dir):
             flag = True
+            if len(folders) > 1:
+                target_folder = folders[1]
             break
     if not flag:
         return
 
     _LOGGER.info("[MDC事件] 下载地址与监控目录匹配: %s, 开始执行刮削" % save_path)
 
-    mdc_dir(save_path)
+    mdc_dir(save_path, target_folder)

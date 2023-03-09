@@ -23,13 +23,13 @@
         {
             "fieldName": "watch_folder",
             "fieldType": "String",
-            "label": "监控路径,逗号分隔",
+            "label": "监控路径,英文逗号分隔. 在每个监控路径后可以用英文冒号(:)附加一个该路径对应的目标路径",
             "defaultValue": ""
         },
         {
             "fieldName": "target_folder",
             "fieldType": "String",
-            "label": "刮削整理目标路径",
+            "label": "默认刮削整理目标路径",
             "defaultValue": ""
         }
     ]

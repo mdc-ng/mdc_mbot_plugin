@@ -16,12 +16,12 @@ watch_folder = []
 target_folder = ""
 
 
-def init_config(web_config: dict):
+def init_config(web_config: dict[str, str]):
     global watch_folder, target_folder, proxies
 
     to_watch = web_config.get("watch_folder")
     if to_watch:
-        watch_folder = to_watch.split(",")
+        watch_folder = [folder.split(":") for folder in to_watch.split(",")]
         logging.info("MDC插件已启用, 监视文件夹: %s" % watch_folder)
 
     target_folder = web_config.get("target_folder") or ""

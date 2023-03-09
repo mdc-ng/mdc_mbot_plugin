@@ -136,9 +136,11 @@ def update_server():
 def mdc_main(
     path: str,
     config_ini=None,
+    target_folder=None,
 ):
 
-    target_folder = config.target_folder
+    if not target_folder:
+        target_folder = config.target_folder
     proxy = config.proxies["http"]
 
     command = ["./mdc_ng", "-p", path]
@@ -160,7 +162,7 @@ def mdc_main(
     )
 
 
-def mdc_dir(path: str):
+def mdc_dir(path: str, target_folder=None):
     videos = collect_videos(path)
     if len(videos) > 0:
         _LOGGER.info("[MDC] 视频文件检测到: %s" % videos)
@@ -171,7 +173,7 @@ def mdc_dir(path: str):
         for video in videos:
             _LOGGER.info("[MDC] 开始处理视频文件: %s" % video)
             try:
-                mdc_main(video)
+                mdc_main(video, target_folder=target_folder)
             except Exception as e:
                 _LOGGER.error("[MDC] 处理视频文件出错: %s" % video)
                 _LOGGER.error(e)
