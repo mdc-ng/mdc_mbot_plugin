@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.7.0...v1.8.0) (2024-05-30)
+
+
+### Features
+
+* 添加复制模式和相应选项 ([a6bef30](https://github.com/mdc-ng/mdc_mbot_plugin/commit/a6bef30a309089776bc7ea43aaaeb53cde06dc11))
+
 ## [1.7.0](https://github.com/mdc-ng/mdc_mbot_plugin/compare/v1.6.0...v1.7.0) (2023-03-09)
 
 
