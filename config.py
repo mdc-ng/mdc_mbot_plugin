@@ -15,9 +15,11 @@ watch_folder = []
 
 target_folder = ""
 
+link_mode = "0"
+
 
 def init_config(web_config: dict[str, str]):
-    global watch_folder, target_folder, proxies
+    global watch_folder, target_folder, proxies, link_mode
 
     to_watch = web_config.get("watch_folder")
     if to_watch:
@@ -29,6 +31,8 @@ def init_config(web_config: dict[str, str]):
     proxy = web_config.get("proxy") or ""
     proxies["http"] = proxy
     proxies["https"] = proxy
+
+    link_mode = web_config.get("link_mode") or "0"
 
 
 @plugin.config_changed

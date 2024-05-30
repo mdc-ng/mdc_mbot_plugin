@@ -66,7 +66,9 @@ def start_mdc_server(ctx: PluginCommandContext):
     icon="",
     run_in_background=True,
 )
-def mdc_test(ctx: PluginCommandContext, path: ArgSchema(ArgType.String, "刮削路径", "")):
+def mdc_test(
+    ctx: PluginCommandContext, path: ArgSchema(ArgType.String, "刮削路径", "")
+):
     try:
         mdc_dir(path)
     except Exception as e:
@@ -137,10 +139,12 @@ def mdc_main(
     path: str,
     config_ini=None,
     target_folder=None,
+    link_mode=None,
 ):
-
     if not target_folder:
         target_folder = config.target_folder
+    if not link_mode:
+        link_mode = config.link_mode
     proxy = config.proxies["http"]
 
     command = ["./mdc_ng", "-p", path]
@@ -151,6 +155,8 @@ def mdc_main(
         command.extend(["-t", target_folder])
     if proxy:
         command.extend(["--proxy", proxy])
+    if link_mode:
+        command.extend(["-l", link_mode])
 
     _LOGGER.info(command)
 
