@@ -4,6 +4,13 @@ Yet another MovieBot plugin
 [![GitHub manifest version](https://img.shields.io/github/manifest-json/v/mdc-ng/mdc_mbot_plugin?label=plugin)](https://github.com/mdc-ng/mdc_mbot_plugin/releases)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mdc-ng/mdc-ng?color=orange&label=mdc-ng)](https://github.com/mdc-ng/mdc-ng/releases)
 
+## 2024-06-03 后续计划说明
+mdcng项目未来独立更新，后续本插件项目只同步core lib的基本刮削功能，应用端（9208端口的app）将不同步在本插件内更新。
+
+应用版用户请单独部署docker版本：https://hub.docker.com/r/mdcng/mdc
+
+容器版本有独立的目录监控、刮削模式等更多功能
+
 ## Features
 - [x] 高性能刮削器
 - [x] 监控下载目录，下载完成自动刮削入库
