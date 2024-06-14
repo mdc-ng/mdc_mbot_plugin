@@ -1,4 +1,4 @@
-2024/06/14 本项目停止维护，请移步 [mdc-ng 应用](https://github.com/mdc-ng/mdc-ng)，使用目录监控代替此插件功能
+2024/06/14 本项目停止维护，请移步 [mdc-ng 应用版](https://github.com/mdc-ng/mdc-ng)，使用目录监控代替此插件功能。应用版已更新模式选择、演员刮削等等更多功能
 ----
 
 # mdc_mbot_plugin
